@@ -12,14 +12,16 @@
     display: flex;
     background-color: #232324;
     border-radius: 20px;
-    width: 95%;
-    max-width: 500px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
     padding-bottom: 10px; /* Added to avoid overlap with soft keyboard */
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 10px; /* Position it 10px above the bottom */
 }
 
 .message {
@@ -175,6 +177,10 @@ button {
     .input-container {
         padding: 10px;
         gap: 8px;
+        position: fixed;
+        bottom: 10px; /* Position it 10px above the bottom */
+        width: 100%;
+        max-width: 100%;
     }
 
     button {
@@ -194,8 +200,12 @@ button {
     }
 
     .input-container {
+        position: fixed;
+        bottom: 10px; /* Position it 10px above the bottom */
         padding: 8px;
         gap: 6px;
+        width: 100%;
+        max-width: 100%;
     }
 
     button {

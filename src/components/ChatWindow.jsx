@@ -128,7 +128,7 @@ const ChatWindow = () => {
 
     const adjustTextAreaHeight = () => {
         const textarea = textAreaRef.current;
-        textarea.style.height = 'auto';
+        //textarea.style.height = 'auto';
         //textarea.style.height = `${textarea.scrollHeight}px`;
     };
 
@@ -136,9 +136,9 @@ const ChatWindow = () => {
     const formatMessage = (text) => {
         // Phone Numbers:
         const phoneNumberRegex = /(\+\d{1,3}\s?)?((\(\d{1,4}\))|\d{1,4})[-.\s]?\d{3}[-.\s]?\d{4}/g;
-            text = text.replace(phoneNumberRegex, (phoneNumber) => {
-                return `<a href="tel:${phoneNumber}" style="color: inherit; text-decoration: underline">${phoneNumber}</a>`;
-            });
+        text = text.replace(phoneNumberRegex, (phoneNumber) => {
+            return `<a href="tel:${phoneNumber}" style="color: inherit; text-decoration: underline">${phoneNumber}</a>`;
+        });
         // Process different markdown elements in specific order
         const processMarkdown = (text) => {
             // Links: [text](url)
@@ -191,20 +191,19 @@ const ChatWindow = () => {
                     value={currentMessage}
                     onChange={(e) => {
                         setCurrentMessage(e.target.value);
-                        adjustTextAreaHeight();
+                        //adjustTextAreaHeight();
                     }}
                     //onKeyPress={handleKeyPress}
                     //placeholder="Type a message..."
                     rows={1}
                     //maxRows={7}
-                    style={{ maxHeight: '168px' }}
+                    //style={{ maxHeight: '168px' }}
                     autoFocus  // Add autoFocus prop
                 />
-                 <button 
-                    onClick={handleSend} 
+                <button
+                    onClick={handleSend}
                     className="send-button"
-                    disabled={currentMessage.trim() === ''}
-                >
+                    disabled={currentMessage.trim() === ''}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="send-icon">
                         <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
                     </svg>
@@ -214,7 +213,7 @@ const ChatWindow = () => {
     );
 };
 
-export default ChatWindow; 
+export default ChatWindow;
 
 /*
 // Email Addresses:
